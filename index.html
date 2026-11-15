@@ -1,0 +1,1277 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#71865a">
+
+  <title>Walimatul Urus | Kimi & Mui</title>
+  <meta name="description" content="Anda dijemput ke Walimatul Urus Kimi & Mui pada 12 Disember 2026 di Ayu Palace, Manjoi, Perak.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #425a3d;
+      --green-light: #728b66;
+      --cream: #fffaf0;
+      --pink: #d47b98;
+      --gold: #b3945d;
+      --dark: #303b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--dark);
+      background: #a5b48a;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(
+          rgba(255,250,240,.18),
+          rgba(255,250,240,.25)
+        ),
+        url("bg.png") center / cover no-repeat;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* FALLING LEAVES AND FLOWERS */
+
+    #petals {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .petal {
+      position: absolute;
+      top: -50px;
+      animation: falling linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes falling {
+      0% {
+        transform: translate(0, -40px) rotate(0);
+      }
+
+      50% {
+        transform: translate(45px, 50vh) rotate(180deg);
+      }
+
+      100% {
+        transform: translate(-30px, 110vh) rotate(360deg);
+      }
+    }
+
+    /* OPENING SCREEN */
+
+    #opening {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      padding: 20px;
+      background:
+        linear-gradient(
+          rgba(61,86,55,.30),
+          rgba(61,86,55,.45)
+        ),
+        url("bg.png") center / cover;
+      transition: opacity .8s, visibility .8s;
+    }
+
+    #opening.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-card {
+      width: 100%;
+      max-width: 440px;
+      padding: 52px 24px 45px;
+      text-align: center;
+      border-radius: 190px 190px 22px 22px;
+      background: rgba(255,251,242,.96);
+      box-shadow: 0 25px 65px rgba(0,0,0,.18);
+      animation: cardAppear 1s ease both;
+    }
+
+    @keyframes cardAppear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .opening-flower {
+      font-size: 40px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .opening-card h1 {
+      font-family: "Playfair Display", serif;
+      color: var(--green);
+      font-size: 35px;
+      font-weight: 500;
+      margin: 24px 0;
+    }
+
+    .script {
+      font-family: "Great Vibes", cursive;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    /* CENTERED COUPLE NAMES */
+
+    .opening-names,
+    .couple {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(64px, 12vw, 88px);
+      line-height: 1.05;
+      margin: 28px 0;
+    }
+
+    .opening-names span,
+    .couple span {
+      display: block;
+    }
+
+    .opening-names .ampersand,
+    .couple .ampersand {
+      font-size: 43px;
+      line-height: 1;
+      color: var(--gold);
+      margin: 8px 0;
+    }
+
+    .opening-date {
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #746c60;
+      margin: 25px 0 32px;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border: 1px solid var(--green);
+      border-radius: 40px;
+      background: var(--green);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      transition: background .2s, transform .2s;
+    }
+
+    .btn:hover {
+      background: #617c55;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+    }
+
+    .btn-outline:hover {
+      color: white;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    /* MAIN CONTENT */
+
+    #main {
+      display: none;
+    }
+
+    #main.visible {
+      display: block;
+      animation: cardAppear .9s ease;
+    }
+
+    .container {
+      width: min(92%, 650px);
+      margin: 35px auto 70px;
+    }
+
+    .section {
+      background: rgba(255,251,243,.95);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 22px;
+      padding: 45px 28px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(49,72,40,.11);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      padding-top: 65px;
+      padding-bottom: 60px;
+      border-radius: 220px 220px 22px 22px;
+    }
+
+    .bismillah {
+      font-family: "Amiri", serif;
+      font-size: 29px;
+      line-height: 1.8;
+      color: var(--green);
+      margin-bottom: 25px;
+    }
+
+    .section-label {
+      color: var(--pink);
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title,
+    .hero h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--green);
+      font-size: 30px;
+      font-weight: 500;
+      margin: 0 0 20px;
+    }
+
+    .divider {
+      color: var(--gold);
+      font-size: 23px;
+      margin: 24px auto;
+    }
+
+    .intro {
+      color: #655f55;
+      font-size: 14px;
+      line-height: 2;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* DATE AND VENUE */
+
+    .date-big {
+      font-family: "Playfair Display", serif;
+      font-size: 65px;
+      color: var(--green);
+    }
+
+    .month {
+      color: var(--pink);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin: 10px 0;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .detail-box {
+      padding: 22px 12px;
+      background: #f3f1e7;
+      border-radius: 14px;
+    }
+
+    .detail-box .emoji {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .detail-box strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .detail-box p {
+      color: #6b675d;
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* COUNTDOWN */
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .count-box {
+      background: #e9eddf;
+      border-radius: 12px;
+      padding: 18px 5px;
+    }
+
+    .count-box span {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(23px, 5vw, 38px);
+      color: var(--green);
+    }
+
+    .count-box small {
+      font-size: 10px;
+      color: #747b68;
+      text-transform: uppercase;
+    }
+
+    /* CONTACTS */
+
+    .host-card {
+      margin-top: 24px;
+      padding: 28px 16px;
+      background: #f3f1e7;
+      border: 1px solid #e0e5d7;
+      border-radius: 18px;
+    }
+
+    .host-icon {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .host-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      color: var(--green);
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+
+    .host-card p {
+      color: #6b675d;
+      margin: 0;
+    }
+
+    /* QR */
+
+    .qr-image {
+      width: min(100%, 320px);
+      display: block;
+      margin: 25px auto;
+      border-radius: 14px;
+      background: white;
+      padding: 10px;
+    }
+
+    /* WISHES */
+
+    .message-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .message-form label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .message-form input,
+    .message-form textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d8dfd0;
+      border-radius: 12px;
+      background: #fffefa;
+      color: var(--dark);
+      outline: none;
+    }
+
+    .message-form input:focus,
+    .message-form textarea:focus {
+      border-color: var(--green-light);
+    }
+
+    .message-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #817b70;
+      line-height: 1.8;
+      margin-top: 15px;
+    }
+
+    /* FLOATING MUSIC BUTTON */
+
+    #musicToggle {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      z-index: 90;
+
+      width: 58px;
+      height: 58px;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--green);
+      color: white;
+
+      border: 2px solid var(--cream);
+      border-radius: 50%;
+
+      font-size: 25px;
+      cursor: pointer;
+
+      box-shadow: 0 6px 25px rgba(0,0,0,.25);
+      transition: transform .3s, background .3s;
+    }
+
+    #musicToggle:hover {
+      transform: scale(1.1);
+      background: #617c55;
+    }
+
+    #musicToggle.playing {
+      animation: musicPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(66,90,61,.35);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(66,90,61,0);
+      }
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px 15px 60px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+
+    footer .script {
+      color: white;
+      font-size: 52px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 94%;
+        margin-top: 15px;
+      }
+
+      .section {
+        padding: 36px 20px;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .opening-card {
+        padding: 42px 20px;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .petal {
+        display: none;
+      }
+
+      #musicToggle.playing {
+        animation: none;
+      }
+
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FALLING FLOWERS -->
+  <div id="petals" aria-hidden="true"></div>
+
+  <!-- OPENING SCREEN -->
+  <div id="opening">
+    <div class="opening-card">
+      <div class="opening-flower">🌸</div>
+
+      <p class="eyebrow">Walimatul Urus</p>
+      <h1>Anda Dijemput</h1>
+
+      <p class="intro">
+        Dengan penuh kesyukuran dan rasa kasih,
+        kami menjemput anda ke majlis perkahwinan kami.
+      </p>
+
+      <div class="script opening-names">
+        <span>Kimi</span>
+        <span class="ampersand">&amp;</span>
+        <span>Mui</span>
+      </div>
+
+      <div class="divider">❀ ✧ ❀</div>
+
+      <p class="opening-date">12 DISEMBER 2026</p>
+
+      <button class="btn" onclick="openInvitation()">
+        ✉ Buka Kad Jemputan
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN INVITATION -->
+  <main id="main">
+
+    <div class="container">
+
+      <!-- HERO -->
+      <section class="section hero">
+        <div class="bismillah" lang="ar" dir="rtl">
+          بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+        </div>
+
+        <p class="section-label">
+          Undangan Majlis Perkahwinan
+        </p>
+
+        <h2>Walimatul Urus</h2>
+        <div class="divider">❀ ✧ ❀</div>
+
+        <p class="intro">
+          Assalamualaikum Warahmatullahi Wabarakatuh
+        </p>
+
+        <br>
+
+        <p class="intro">
+          Dengan segala hormatnya, kami menjemput
+          Dato' / Datin / Tuan / Puan / Encik / Cik
+          seisi keluarga untuk hadir memeriahkan
+          majlis perkahwinan kami.
+        </p>
+
+        <div class="script couple">
+          <span>Kimi</span>
+          <span class="ampersand">&amp;</span>
+          <span>Mui</span>
+        </div>
+
+        <div class="divider">✿</div>
+
+        <p class="intro">
+          Semoga dengan kehadiran dan doa restu anda
+          akan menyerikan lagi majlis serta mendapat
+          keberkatan daripada Allah SWT.
+        </p>
+      </section>
+
+      <!-- DATE -->
+      <section class="section">
+        <p class="section-label">Save The Date</p>
+        <h2 class="section-title">Hari Bahagia Kami</h2>
+
+        <p>Sabtu</p>
+        <div class="date-big">12</div>
+        <div class="month">DISEMBER 2026</div>
+        <div class="divider">❀</div>
+
+        <div class="details">
+          <div class="detail-box">
+            <div class="emoji">🕊️</div>
+            <strong>Masa</strong>
+            <p>
+              12:00 Tengah Hari<br>
+              hingga 3:00 Petang
+            </p>
+          </div>
+
+          <div class="detail-box">
+            <div class="emoji">📍</div>
+            <strong>Lokasi</strong>
+            <p>
+              Ayu Palace<br>
+              Manjoi, Perak
+            </p>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a class="btn"
+             href="https://www.google.com/maps/search/?api=1&amp;query=Ayu%20Palace%20Manjoi%20Perak"
+             target="_blank"
+             rel="noopener noreferrer">
+            📍 Google Maps
+          </a>
+
+          <button class="btn btn-outline"
+                  onclick="addToCalendar()">
+            📅 Add to Calendar
+          </button>
+        </div>
+      </section>
+
+      <!-- COUNTDOWN -->
+      <section class="section">
+        <p class="section-label">Counting The Days</p>
+
+        <h2 class="section-title">
+          Detik Menuju Hari Bahagia
+        </h2>
+
+        <div class="countdown">
+          <div class="count-box">
+            <span id="days">00</span>
+            <small>Hari</small>
+          </div>
+
+          <div class="count-box">
+            <span id="hours">00</span>
+            <small>Jam</small>
+          </div>
+
+          <div class="count-box">
+            <span id="minutes">00</span>
+            <small>Minit</small>
+          </div>
+
+          <div class="count-box">
+            <span id="seconds">00</span>
+            <small>Saat</small>
+          </div>
+        </div>
+
+        <p class="note" id="countdown-note">
+          Menghitung hari penuh bermakna...
+        </p>
+      </section>
+
+      <!-- CONTACTS -->
+      <section class="section" id="contact">
+        <p class="section-label">Sebarang Pertanyaan</p>
+        <h2 class="section-title">Hubungi Tuan Rumah</h2>
+
+        <p class="intro">
+          Untuk sebarang pertanyaan berkaitan majlis,
+          sila hubungi:
+        </p>
+
+        <div class="host-card">
+          <div class="host-icon">🌸</div>
+          <h3>AZIZAH BINTI ABDUL AZIZ</h3>
+          <p>010-3931290</p>
+
+          <div class="button-row">
+            <a class="btn"
+               href="https://wa.me/60103931290"
+               target="_blank"
+               rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+
+            <a class="btn btn-outline"
+               href="tel:0103931290">
+              📞 Call
+            </a>
+          </div>
+        </div>
+
+        <div class="host-card">
+          <div class="host-icon">🌿</div>
+          <h3>MUSTAFHA BIN MOHD ALI</h3>
+          <p>014-6601290</p>
+
+          <div class="button-row">
+            <a class="btn"
+               href="https://wa.me/60146601290"
+               target="_blank"
+               rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+
+            <a class="btn btn-outline"
+               href="tel:0146601290">
+              📞 Call
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SALAM KAUT -->
+      <section class="section">
+        <p class="section-label">Tanda Ingatan</p>
+        <h2 class="section-title">Salam Kaut</h2>
+
+        <p class="intro">
+          Doa dan ingatan anda amat kami hargai.
+          Bagi yang ingin mengirimkan salam kaut
+          secara digital, boleh menggunakan kod QR
+          di bawah.
+        </p>
+
+        <img
+          class="qr-image"
+          src="qr.jpeg"
+          alt="Kod QR Maybank untuk Salam Kaut"
+          loading="lazy"
+        >
+
+        <p class="intro">
+          Terima kasih atas ingatan, doa dan
+          kemurahan hati anda.
+        </p>
+
+        <p class="note">
+          Sila semak nama penerima sebelum membuat
+          sebarang pindahan.
+        </p>
+      </section>
+
+      <!-- WEDDING WISHES -->
+      <section class="section" id="ucapan">
+        <p class="section-label">Titipan Kasih</p>
+        <h2 class="section-title">Ucapan &amp; Doa</h2>
+
+        <p class="intro">
+          Tinggalkan ucapan dan doa buat pasangan
+          pengantin. Setiap kata-kata indah amat
+          kami hargai.
+        </p>
+
+        <form class="message-form" onsubmit="sendWish(event)">
+          <label for="guestName">Nama Anda</label>
+
+          <input
+            id="guestName"
+            type="text"
+            maxlength="80"
+            placeholder="Contoh: Ahmad"
+            required
+          >
+
+          <label for="guestMessage">Ucapan Anda</label>
+
+          <textarea
+            id="guestMessage"
+            maxlength="1000"
+            placeholder="Tuliskan ucapan dan doa anda..."
+            required
+          ></textarea>
+
+          <button class="btn" type="submit">
+            💌 Hantar Ucapan melalui WhatsApp
+          </button>
+        </form>
+
+        <p class="note">
+          WhatsApp akan dibuka dengan ucapan anda.
+          Tekan Send di WhatsApp untuk menghantarnya.
+        </p>
+      </section>
+
+      <!-- SHARE -->
+      <section class="section">
+        <p class="section-label">Sebarkan Jemputan</p>
+        <h2 class="section-title">Kongsi Kad Jemputan</h2>
+
+        <p class="intro">
+          Jemput keluarga dan sahabat untuk
+          bersama-sama meraikan hari bahagia kami.
+        </p>
+
+        <div class="button-row">
+          <button class="btn" onclick="shareInvitation()">
+            💚 Kongsi di WhatsApp
+          </button>
+
+          <button class="btn btn-outline"
+                  onclick="copyInvitationLink()">
+            🔗 Salin Pautan
+          </button>
+        </div>
+      </section>
+
+      <!-- CLOSING -->
+      <section class="section">
+        <div class="divider">❀ ✧ ❀</div>
+        <h2 class="section-title">Terima Kasih</h2>
+
+        <p class="intro">
+          Kehadiran serta doa restu anda
+          amat bermakna buat kami.
+        </p>
+
+        <br>
+
+        <p class="intro">
+          Semoga Allah SWT memberkati majlis ini
+          dan mengurniakan kebahagiaan
+          yang berpanjangan.
+        </p>
+
+        <div class="divider">🌸</div>
+      </section>
+
+    </div>
+
+    <footer>
+      <div class="script">Kimi &amp; Mui</div>
+      <p>12 . 12 . 2026</p>
+      <p>Made with love ♡</p>
+    </footer>
+
+  </main>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+
+  <!-- FLOATING MUSIC BUTTON -->
+  <button
+    id="musicToggle"
+    type="button"
+    onclick="toggleMusic()"
+    aria-label="Play wedding music"
+    title="Play / Pause Music"
+  >
+    🎵
+  </button>
+
+  <script>
+    // =========================================
+    // CONFIGURATION
+    // =========================================
+
+    const ORGANIZER_WHATSAPP = "60175082273";
+
+    // =========================================
+    // BACKGROUND MUSIC
+    // =========================================
+
+    const weddingMusic =
+      document.getElementById("weddingMusic");
+
+    const musicToggle =
+      document.getElementById("musicToggle");
+
+    // Music volume: 0.0 to 1.0
+    weddingMusic.volume = 0.5;
+
+    function updateMusicButton() {
+      if (weddingMusic.paused) {
+        musicToggle.textContent = "🎵";
+        musicToggle.classList.remove("playing");
+        musicToggle.setAttribute(
+          "aria-label",
+          "Play wedding music"
+        );
+      } else {
+        musicToggle.textContent = "⏸";
+        musicToggle.classList.add("playing");
+        musicToggle.setAttribute(
+          "aria-label",
+          "Pause wedding music"
+        );
+      }
+    }
+
+    function toggleMusic() {
+      if (weddingMusic.paused) {
+        weddingMusic.play().catch(() => {
+          alert(
+            "Tidak dapat memainkan lagu. " +
+            "Sila pastikan song.mp3 berada " +
+            "dalam folder yang sama dengan index.html."
+          );
+        });
+      } else {
+        weddingMusic.pause();
+      }
+    }
+
+    weddingMusic.addEventListener(
+      "play", updateMusicButton
+    );
+
+    weddingMusic.addEventListener(
+      "pause", updateMusicButton
+    );
+
+    weddingMusic.addEventListener(
+      "ended", updateMusicButton
+    );
+
+    weddingMusic.addEventListener("error", () => {
+      console.error("Failed to load song.mp3");
+    });
+
+    // =========================================
+    // OPEN INVITATION
+    // =========================================
+
+    function openInvitation() {
+      const opening =
+        document.getElementById("opening");
+
+      const main =
+        document.getElementById("main");
+
+      opening.classList.add("hidden");
+      main.classList.add("visible");
+
+      document.body.style.overflowY = "auto";
+      window.scrollTo(0, 0);
+
+      // Show floating music button
+      musicToggle.style.display = "flex";
+
+      // Attempt playback on user interaction
+      weddingMusic.play().catch(() => {
+        console.log(
+          "Music could not start automatically. " +
+          "Guest can use the music button."
+        );
+        updateMusicButton();
+      });
+    }
+
+    // Lock page before opening invitation
+    document.body.style.overflowY = "hidden";
+
+    // =========================================
+    // FALLING LEAVES AND FLOWERS
+    // =========================================
+
+    function createPetals() {
+      const container =
+        document.getElementById("petals");
+
+      if (
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+      ) {
+        return;
+      }
+
+      const symbols = [
+        "🌸", "🌿", "🍃", "🌼", "🌷"
+      ];
+
+      for (let i = 0; i < 22; i++) {
+        const petal =
+          document.createElement("span");
+
+        petal.className = "petal";
+
+        petal.textContent =
+          symbols[
+            Math.floor(Math.random() * symbols.length)
+          ];
+
+        petal.style.left =
+          Math.random() * 100 + "%";
+
+        petal.style.fontSize =
+          (12 + Math.random() * 15) + "px";
+
+        petal.style.animationDuration =
+          (9 + Math.random() * 12) + "s";
+
+        petal.style.animationDelay =
+          (-Math.random() * 20) + "s";
+
+        petal.style.opacity =
+          0.35 + Math.random() * 0.4;
+
+        container.appendChild(petal);
+      }
+    }
+
+    createPetals();
+
+    // =========================================
+    // WEDDING COUNTDOWN
+    // =========================================
+
+    const weddingDate =
+      new Date("2026-12-12T12:00:00+08:00").getTime();
+
+    function updateCountdown() {
+      const distance =
+        weddingDate - Date.now();
+
+      if (distance <= 0) {
+        [
+          "days",
+          "hours",
+          "minutes",
+          "seconds"
+        ].forEach(id => {
+          document.getElementById(id)
+            .textContent = "00";
+        });
+
+        document.getElementById(
+          "countdown-note"
+        ).textContent =
+          "Hari bahagia telah tiba! 🌸";
+
+        return;
+      }
+
+      const days =
+        Math.floor(distance / 86400000);
+
+      const hours =
+        Math.floor((distance / 3600000) % 24);
+
+      const minutes =
+        Math.floor((distance / 60000) % 60);
+
+      const seconds =
+        Math.floor((distance / 1000) % 60);
+
+      const values = {
+        days,
+        hours,
+        minutes,
+        seconds
+      };
+
+      Object.entries(values).forEach(
+        ([id, value]) => {
+          document.getElementById(id)
+            .textContent =
+              String(value).padStart(2, "0");
+        }
+      );
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // =========================================
+    // GUEST WISHES VIA WHATSAPP
+    // =========================================
+
+    function sendWish(event) {
+      event.preventDefault();
+
+      const name =
+        document.getElementById("guestName")
+          .value.trim();
+
+      const message =
+        document.getElementById("guestMessage")
+          .value.trim();
+
+      if (!name || !message) {
+        alert("Sila isi nama dan ucapan anda.");
+        return;
+      }
+
+      const text =
+        "🌸 *UCAPAN WALIMATUL URUS* 🌸\n\n" +
+        "*Kimi & Mui*\n" +
+        "12 Disember 2026\n\n" +
+        "*Daripada:* " + name + "\n\n" +
+        "*Ucapan:*\n" + message + "\n\n" +
+        "Semoga berbahagia hingga ke syurga 🤍";
+
+      const url =
+        "https://wa.me/" +
+        ORGANIZER_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(text);
+
+      // Direct navigation avoids popup blockers
+      window.location.href = url;
+    }
+
+    // =========================================
+    // SHARE INVITATION
+    // =========================================
+
+    function shareInvitation() {
+      const text =
+        "🌸 *WALIMATUL URUS* 🌸\n\n" +
+        "Anda dijemput ke majlis perkahwinan\n" +
+        "*Kimi & Mui*\n\n" +
+        "📅 12 Disember 2026 (Sabtu)\n" +
+        "🕛 12:00 tengah hari - 3:00 petang\n" +
+        "📍 Ayu Palace, Manjoi, Perak\n\n" +
+        "💌 Kad Jemputan:\n" +
+        window.location.href + "\n\n" +
+        "Semoga kehadiran anda menyerikan majlis kami.";
+
+      window.location.href =
+        "https://wa.me/?text=" +
+        encodeURIComponent(text);
+    }
+
+    // =========================================
+    // COPY INVITATION LINK
+    // =========================================
+
+    async function copyInvitationLink() {
+      try {
+        await navigator.clipboard.writeText(
+          window.location.href
+        );
+
+        alert(
+          "Pautan jemputan berjaya disalin!"
+        );
+      } catch (error) {
+        window.prompt(
+          "Salin pautan jemputan:",
+          window.location.href
+        );
+      }
+    }
+
+    // =========================================
+    // ADD TO CALENDAR
+    // =========================================
+
+    function addToCalendar() {
+      const calendarData = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Kimi Mui Wedding//MS",
+        "BEGIN:VEVENT",
+        "UID:kimi-mui-20261212@wedding",
+        "DTSTAMP:20261115T000000Z",
+        "DTSTART:20261212T040000Z",
+        "DTEND:20261212T070000Z",
+        "SUMMARY:Walimatul Urus Kimi & Mui",
+        "LOCATION:Ayu Palace\\, Manjoi\\, Perak",
+        "DESCRIPTION:Majlis Walimatul Urus Kimi dan Mui",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob(
+        [calendarData],
+        {
+          type: "text/calendar;charset=utf-8"
+        }
+      );
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const link =
+        document.createElement("a");
+
+      link.href = url;
+      link.download =
+        "Walimatul-Urus-Kimi-Mui.ics";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
